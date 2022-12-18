@@ -1,0 +1,22 @@
+spring:
+  mvc:
+    path match:
+      matching-strategy: ant_path_matcher
+
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:~/security
+    username: sa
+    password: 1234
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        default_batch_fetch_size: 400
+        use_sql_comments: true
+    open-in-view: false
+    database-platform: org.hibernate.dialect.H2Dialect
