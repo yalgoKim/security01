@@ -52,7 +52,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .logoutSuccessUrl("/login") // 로그아웃 후 리다이렉트 할 주소 (로그아웃 후 로그인화면 띄울예정)
                 .invalidateHttpSession(true) // 로그아웃 시 세션 전체 삭제 여부 true
                 .and()
-                .csrf().disable().authorizeRequests(); // csrf 에러 발생 방지
+                .csrf().disable().authorizeRequests() // csrf 에러 발생 방지
+                .and()
+                .headers().frameOptions().disable();
     }
 
     // 인증을 무시할 경로를 설정
